@@ -1,0 +1,200 @@
+
+.oneColumnGrid {
+  display: grid;
+  grid-template-columns:  1fr;
+  gap: 16px;
+}
+
+.twoColumnGrid {
+  display: grid;
+  grid-template-columns: 1fr; /* Por defecto, una columna */
+  grid-auto-flow: dense; /* Ordenar en sentido contrario */
+  gap: 16px;
+}
+
+
+
+@media (min-width: 768px) {
+  .twoColumnGrid {
+    grid-template-columns: 1fr 1fr; 
+    
+    /* Dos columnas en pantallas más grandes */
+  }
+}
+
+
+.fourColumnGrid {
+  display: none;
+}
+
+
+
+@media (min-width: 768px) {
+  .fourColumnGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px; 
+  } 
+}
+
+@media (min-width: 1024px) {
+  .fourColumnGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px; 
+  } 
+}
+
+
+.fiveColumnGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px; /* Ajusta el espacio entre los elementos según sea necesario */
+  }
+
+  .sixColumnGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px; /* Ajusta el espacio entre los elementos según sea necesario */
+  }
+.column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  transform: translateX(10px);
+  transform: translateY(5px);
+}
+
+.imageContent {
+  display: flex;
+  position: relative;
+  padding: 20;
+  background-color: #151414;
+  height: 300px;
+  width: 300px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.contentTitle {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contentText {
+  margin-top: 40px;
+}
+@media (min-width: 768px) {
+  .contentText{
+   margin-top: 0px; /* Dos columnas en pantallas más grandes */
+  }
+}
+
+.interestCard {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+}
+
+.textInterestContent {
+  position: absolute;
+  background-color: #000000a8;
+  bottom: -100%;
+  width: 100%;
+  padding: 8px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: bottom 0.3s ease-in-out;
+}
+
+.interestCard:hover .textInterestContent {
+  bottom: 0;
+}
+
+
+.textInterestContentMobil {
+  position: absolute;
+  background-color: #000000a8;
+  bottom: -100%;
+  width: 100%;
+  padding: 8px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: bottom 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) { 
+  .textInterestContent{
+display: none;  
+  }
+}
+
+@media (min-width: 768px) { 
+  .textInterestContentMobil{
+display: none;  
+  }
+}
+
+
+.imageInterest {
+  transition: transform 0.3s ease-in-out;
+}
+
+.interestCard:hover .imageInterest {
+  transform: scale(1.1);
+}
+
+.iconInterestContent {
+  background-color: white;
+  padding: 4px;
+  border-radius: 100px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 6px;
+
+}
+
+
+
+.element {
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+/* Interests */
+
+
+.carouselView {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .carouselView {
+  
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .interest-card {
+    bottom: 100px; /* O el valor que necesites para móvil cuando no está activo */
+  }
+
+  .interest-card.active {
+    bottom: 0; /* El valor para móvil cuando está activo */
+  }
+}

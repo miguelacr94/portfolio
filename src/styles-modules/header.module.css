@@ -1,0 +1,14 @@
+.titleContent {
+    position: absolute;
+    bottom: 60px;
+    right: -200px;
+    z-index: 10;
+    padding-left: 20px;
+    width: 300px;
+}
+
+.imageContent {
+    background-color: black;
+    width: 70%;
+    position: relative;
+}
